@@ -41,16 +41,5 @@ public final class DamageToDeath extends JavaPlugin implements Listener {
     public void setDeathMessage(PlayerDeathEvent event) {
         event.setDeathMessage("You died");
     }
-
-    @EventHandler
-    public void CraftingMiss(CraftItemEvent event) {
-        Entity entity = event.getWhoClicked();
-        double random = Math.random();
-        if (random < 0.5D) {
-            event.setCurrentItem(new ItemStack(Material.COAL));
-            entity.sendMessage("クラフトに失敗しました！");
-        }
-
-    }
 }
 
