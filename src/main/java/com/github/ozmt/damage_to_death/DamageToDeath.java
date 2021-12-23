@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DamageToDeath extends JavaPlugin implements Listener {
@@ -29,6 +30,11 @@ public final class DamageToDeath extends JavaPlugin implements Listener {
         if(!(entity instanceof Player)) return;
         event.setCancelled(true);
         getServer().getOnlinePlayers().forEach(p -> p.setHealth(0));
+    }
 
+    @EventHandler
+    public void setDeathMessage(PlayerDeathEvent event) {
+        event.setDeathMessage("You died");
     }
 }
+
