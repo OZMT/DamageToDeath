@@ -1,0 +1,4 @@
+name: DamageToDeath
+version: '${version}'
+main: com.github.ozmt.damage_to_death.DamageToDeath
+authors: [ tomato111 ]
